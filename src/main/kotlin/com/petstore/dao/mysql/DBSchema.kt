@@ -40,6 +40,15 @@ object Orders : Table() {
     val amount = decimal("amount", 10, 2)
 }
 
+/**订单表**/
+object Integrals : Table() {
+    val id = varchar("id", length = 10).primaryKey()
+    val count = integer("count")
+    val userid = integer("userid")
+    val nopayfor = integer("nopayfor")
+
+}
+
 /***订单明细表 **/
 
 object Orderdetails : Table() {

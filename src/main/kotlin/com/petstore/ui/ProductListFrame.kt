@@ -140,6 +140,11 @@ class ProductListFrame : MyFrame("商品列表", 1000, 700) {
                 font = Font("微软雅黑", Font.PLAIN, 15)
                 detailPanel.add(this)
             }
+
+            val btnIntegralCheck = JButton("查看金额").apply {
+                font = Font("微软雅黑", Font.PLAIN, 15)
+                detailPanel.add(this)
+            }
             //注册【添加到购物车】按钮的ActionEvent事件监听器
             btnAdd.addActionListener {
                 if (selectedRow < 0) {
@@ -157,6 +162,11 @@ class ProductListFrame : MyFrame("商品列表", 1000, 700) {
             }
             btnCheck.addActionListener {
                 CartFrame(cart, this).setVisible(true)
+                isVisible = false
+            }
+
+            btnIntegralCheck.addActionListener {
+                IntegralFrame().setVisible(true)
                 isVisible = false
             }
 
